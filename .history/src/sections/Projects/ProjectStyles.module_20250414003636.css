@@ -1,0 +1,122 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    img {
+        width: 100%;
+        max-width: 200px;
+        align-self: center;
+        background-color: var(--project-card-bg);
+        border-radius: 20px;
+    }
+
+    a {
+        width: fit-content;
+        align-self: center;
+        text-decoration: none;
+        color: #222;
+        transition: transform 200ms ease-in-out;
+    }
+
+    a:hover {
+        transform: scale(1.05);
+    }
+    a:active {
+        transform: scale(0.95);
+    }
+
+    .projectsContainer {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 20px;
+        margin: 0 auto;
+        border-color: bisque;
+    }
+
+    .visuallyhidden {
+        position: absolute;
+        z-index: -1;
+        right: 0;
+        opacity: 0 
+      }
+
+    .cardcarousel {
+        --card-width: 80%;
+        --card-max-width: 280px;
+        --card-height: 350px;
+        --carousel-min-width: 600px;
+        z-index: 1;
+        position: relative;
+        margin: 0 auto;
+        width: 100%;
+        height: var(--card-height);
+        min-width: var(--carousel-min-width);
+        transition: filter .3s ease;
+      }
+
+      .cardCarousel.smooth-return {
+        transition: all .2s ease;
+      }
+      
+      .cardCarousel .ProjectCard {
+        background: whitesmoke;
+        width: var(--ProjectCard-width);
+        max-width: var(--ProjectCard-max-width);
+        text-align: center;
+        padding: 1em;
+        min-width: 250px;
+        height: var(--ProjectCard-height);
+        position: absolute;
+        margin: 0 auto;
+        color: rgba(0,0,0,.5);
+        transition: inherit;
+        -webkit-box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.3);
+        -moz-box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.3);
+        box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.3);
+        border-radius: 1em;
+        filter: brightness(.9);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      .ProjectCard.highlight {
+        filter: brightness(1)
+      }
+      
+      
+      .ProjectCard:nth-of-type(1) .image-container {
+          background-image: url("https://static.addtoany.com/images/dracaena-cinnabari.jpg");
+      }
+       
+      .ProjectCard:nth-of-type(2) .image-container {
+        background-image: url("https://www.w3schools.com/w3css/img_lights.jpg")
+      }
+      
+      .ProjectCard:nth-of-type(3) .image-container {
+        background-image: url("https://images.pexels.com/photos/414612/pexels-photo-414612.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500")
+      }
+      .ProjectCard:nth-of-type(4) .image-container {
+        background-image: url("https://images.pexels.com/photos/67636/rose-blue-flower-rose-blooms-67636.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500")
+      }
+
+    @media (width >= 800px) {
+        .projectsContainer {
+          flex-direction: row;
+          flex-wrap: wrap;
+          padding: 0 30px;
+          justify-content: space-evenly;
+        }
+        .hero {
+          max-width: 350px;
+          Width: 350px;
+        }
+    }
+}
+
+  

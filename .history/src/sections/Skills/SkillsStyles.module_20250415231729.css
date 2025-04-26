@@ -1,0 +1,102 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    
+    
+    span { 
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    img {
+        width: 20px;
+    }
+    .section-title {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+        text-align: center;
+        align-content: center;
+      }
+      
+    .section-title.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+}
+
+.sectionDescription {
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .column {
+    flex: 1;
+    min-width: 300px;
+  }
+  .column img {
+    width: 120px; /* Increase size */
+    height: 120px; /* Optional: force square size */
+    object-fit: contain;
+    transition: transform 0.3s ease;
+  }
+  
+  .column img:hover {
+    transform: scale(1.1); /* Optional: subtle zoom on hover */
+  }
+
+  .logosGrid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+  }
+  
+  .logoColumn {
+    flex: 0 0 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .logoColumn img {
+    max-width: 20px;
+    height: auto;
+    object-fit: contain;
+  }
+  .skilllist {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+hr {
+    width: 100px;
+    height: 2px;
+    background-color: var(--text-color);
+    border: none;
+    margin: 30px auto;
+}
+
+@media (width >= 800px) {
+    .skilllist {
+        max-width: fit-content;
+        gap: 30px;
+
+        p{
+            font-size: 20px;
+        }
+    }
+   
+    hr {
+        width: 300px;
+    }
+
+}
+    

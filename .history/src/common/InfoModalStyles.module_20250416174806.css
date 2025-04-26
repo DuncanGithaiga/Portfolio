@@ -1,0 +1,79 @@
+.infoModal {
+    position: absolute;
+    top: 10%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    background: transparent;
+    max-width: 400px;
+    z-index: 1000;
+}
+.openButton {
+    color: var(--btn-color, #7f5af0);
+    padding: 0.75rem 1.25rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s ease, transform 0.2s ease;
+    width: 90px;
+    height: 90px;
+    border: 2px solid #a259ff;
+    border-radius: 50%;
+    background-color: transparent;
+    position: absolute;
+    z-index: 1000;
+    margin-top: 20px;
+    margin-left: 800px;
+  }
+  
+  .openButton:hover {
+    background-color: #6b4edb;
+  }
+  
+  .modalOverlay {
+    background: transparent;
+    backdrop-filter: blur(0px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease-in-out;
+    margin-top: 1100px;
+  }
+  
+  .modalContent {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    max-width: 400px;
+    width: 90%;
+    position: relative;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
+    animation: slideUp 0.3s ease;
+    margin-left: 1000px;
+  }
+  
+  .closeButton {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #7f5af0;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: transparent;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes slideUp {
+    from { transform: translateY(30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }

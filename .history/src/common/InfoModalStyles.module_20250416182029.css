@@ -1,0 +1,30 @@
+.imageContainer {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .imageContainer img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+  }
+.overlayButton {
+    position: absolute;
+    top: 10px; /* adjust based on where you want it */
+    right: 10px;
+    z-index: 2;
+    color: #7f5af0;
+    border: 2px solid #a259ff;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background 0.3s ease;
+  }
+  
+  .overlayButton:hover {
+    background-color: #f2ecff;
+  }

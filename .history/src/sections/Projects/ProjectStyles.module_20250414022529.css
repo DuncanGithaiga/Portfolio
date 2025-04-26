@@ -1,0 +1,79 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+
+    img {
+        width: 100%;
+        max-width: 200px;
+        align-self: center;
+        background-color: var(--project-card-bg);
+        border-radius: 20px;
+    }
+
+    a {
+        width: fit-content;
+        align-self: center;
+        text-decoration: none;
+        color: #222;
+        transition: transform 200ms ease-in-out;
+    }
+
+    a:hover {
+        transform: scale(1.05);
+    }
+    a:active {
+        transform: scale(0.95);
+    }
+
+    .projectContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0 20px;
+        gap: 20px;
+    }
+    .card-carousel {
+        position: relative;
+        width: 100%;
+        height: 400px; /* or however tall you want */
+        overflow: hidden;
+      }
+      
+      .card-carousel .card {
+        position: absolute;
+        top: 50%; /* center vertically */
+        transform: translateY(-50%);
+        transition: all 0.3s ease;
+      }
+
+        .card-carousel .card.active {
+            transform: translateY(-50%) scale(1.1); /* scale up the active card */
+            z-index: 1; /* bring the active card to the front */
+        }
+        .card-carousel .card.inactive {
+            transform: translateY(-50%) scale(0.9); /* scale down the inactive cards */
+            z-index: 0; /* send the inactive cards to the back */
+        }
+        .card-carousel .card img {
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+        }
+
+    @media (width >= 800px) {
+        .projectsContainer {
+          flex-direction: row;
+          flex-wrap: wrap;
+          padding: 0 30px;
+          justify-content: space-evenly;
+        }
+        .hero {
+          max-width: 350px;
+          Width: 350px;
+        }
+    }
+}

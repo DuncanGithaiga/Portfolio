@@ -1,0 +1,72 @@
+.container {
+    padding: 4rem 2rem;
+  }
+  
+  .columns {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+  
+  .column {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .sectionTitle {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  
+  .skilllist {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1rem 0;
+  }
+  
+  .logosGrid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+  }
+  
+  .logosGrid img {
+    width: 20px;
+    height: auto;
+    object-fit: contain;
+  }
+hr {
+    width: 100px;
+    height: 2px;
+    background-color: var(--text-color);
+    border: none;
+    margin: 30px auto;
+}
+
+@media (width >= 800px) {
+    .skilllist {
+        max-width: fit-content;
+        gap: 30px;
+
+        p{
+            font-size: 20px;
+        }
+    }
+   
+    hr {
+        width: 300px;
+    }
+
+}
+    

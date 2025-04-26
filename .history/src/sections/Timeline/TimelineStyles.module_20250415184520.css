@@ -1,0 +1,185 @@
+/* Timeline.module.css */
+.timelineContainer {
+  padding: 4rem 1rem;
+  scroll-snap-type: y mandatory;
+  overflow-y: auto;
+}
+
+.title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: var(--text-color, #1a1a1a);
+}
+
+.timelineWrapper {
+  display: flex;
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.verticalTimeline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  scroll-behavior: smooth;
+}
+
+.timeline {
+    position: relative;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* .timeline::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    margin-top: 70px;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 70%;
+    background: var(--accent-color, #7f5af0);
+    z-index: -1;
+  }
+   */
+  .event {   
+    margin: 2rem 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  }
+
+  .left {
+    justify-content: flex-start;
+  }
+  
+  .right {
+    justify-content: flex-end;
+  }
+  
+  .content {
+    background: var(--card-bg, #fff);
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    width: 45%;
+  }
+  
+  .event:nth-child(odd) .content {
+    left: 0;
+    margin-left: 0;
+  }
+  
+  .event:nth-child(even) .content {
+    left: 55%;
+    margin-left: auto;
+  }
+
+  .stepWrapper {
+    scroll-snap-align: center;
+    width: 100%;
+    max-width: 600px;
+  }
+  
+  .stepCard {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.6s ease;
+  }
+  
+  .visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .year {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: var(--accent-color, #7f5af0);
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+
+  .icon {
+    color: var(--accent-color, #7f5af0);
+    margin-bottom: 0.75rem;
+  }
+
+  .progressBar {
+    width: 40px;
+    position: relative;
+    left: 50%;
+    margin-top: 70px;
+  }
+  
+  .progressFill {
+    content: "";
+    position: absolute;
+    left: 50%;
+    margin-top: 70px;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 70%;
+    background: var(--accent-color, #7f5af0);
+    z-index: -1;
+  }
+  
+  .progressDot {
+    position: absolute;
+    left: 11px;
+    width: 18px;
+    height: 18px;
+    background: #ddd;
+    border: 2px solid #bbb;
+    border-radius: 50%;
+    z-index: 1;
+    transition: background 0.3s ease, border-color 0.3s ease;
+  }
+  
+  .progressDot.active {
+    background: var(--accent-color, #7f5af0);
+    border-color: var(--accent-color, #7f5af0);
+  }
+  
+  @media (max-width: 768px) {
+    .timeline::before {
+      left: 8px;
+    }
+
+    .timelineWrapper {
+      flex-direction: column;
+    }
+  
+    .progressBar {
+      display: none;
+    }
+  
+    .content {
+      width: calc(100% - 2rem);
+      left: 1rem !important;
+    }
+
+    .stepCard {
+      padding: 1.5rem;
+    }
+  }
+  

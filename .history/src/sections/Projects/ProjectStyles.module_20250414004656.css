@@ -1,0 +1,82 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    img {
+        width: 100%;
+        max-width: 200px;
+        align-self: center;
+        background-color: var(--project-card-bg);
+        border-radius: 20px;
+    }
+
+    a {
+        width: fit-content;
+        align-self: center;
+        text-decoration: none;
+        color: #222;
+        transition: transform 200ms ease-in-out;
+    }
+
+    a:hover {
+        transform: scale(1.05);
+    }
+    a:active {
+        transform: scale(0.95);
+    }
+
+    .projectsContainer {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 20px;
+        margin: 0 auto;
+        border-color: bisque;
+    }
+
+    .visuallyhidden {
+        position: absolute;
+        z-index: -1;
+        right: 0;
+        opacity: 0 
+      }
+
+      .cardCarousel {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 1rem;
+        padding: 2rem;
+        scroll-behavior: smooth;
+      }
+      
+      .cardCarousel::-webkit-scrollbar {
+        display: none; /* Optional: hide scrollbar */
+      }
+      
+      .cardCarousel > * {
+        flex: 0 0 auto;
+        scroll-snap-align: start;
+        min-width: 300px;
+        max-width: 350px;
+        border-radius: 1rem;
+      }
+      
+    @media (width >= 800px) {
+        .projectsContainer {
+          flex-direction: row;
+          flex-wrap: wrap;
+          padding: 0 30px;
+          justify-content: space-evenly;
+        }
+        .hero {
+          max-width: 350px;
+          Width: 350px;
+        }
+    }
+}
+
+  

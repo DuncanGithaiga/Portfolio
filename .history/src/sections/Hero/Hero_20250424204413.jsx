@@ -1,0 +1,136 @@
+import styles from './HeroStyles.module.css'
+import heroImg from '../../assets/hero-img.png'
+import sun from '../../assets/sun.svg'
+import moon from '../../assets/moon.svg'
+import twitterDark from '../../assets/twitter-dark.svg'
+import twitterLight from '../../assets/twitter-light.svg'
+import githubLight from '../../assets/github-light.svg'
+import githubDark from '../../assets/github-dark.svg'
+import linkedinLight from '../../assets/linkedin-light.svg'
+import linkedinDark from '../../assets/linkedin-dark.svg'
+import gradient from '../../assets/gradient.png';
+import waves from '../../assets/waves.png';
+import robot from '../../assets/robot.1.png';
+import CV from '../../assets/CV.pdf'
+import Spline from '@splinetool/react-spline';
+import { useTheme } from '../../common/ThemeContext'
+import { TypeAnimation } from 'react-type-animation';
+import React, { useState, useEffect } from 'react';
+import { FaAnglesDown  } from 'react-icons/fa6';
+import { motion } from 'framer-motion';
+
+function Hero() {
+    const { theme, toggleTheme } = useTheme();
+    const themeIcon = theme === 'light' ? sun : moon;
+    const twitterIcon = theme === 'light' ? twitterLight : twitterDark;
+    const githubIcon = theme === 'light' ? githubLight : githubDark;
+    const linkedinIcon = theme === 'light' ? linkedinLight : linkedinDark;
+    const [coords, setCoords] = useState({ x: 0, y: 0 });
+    const [showModal, setShowModal] = useState(false);
+    const [bgIndex, setBgIndex] = useState(0);
+    
+      useEffect(() => {
+        const moveHandler = (e) => {
+          setCoords({ x: e.clientX, y: e.clientY });
+        };
+    
+        window.addEventListener('mousemove', moveHandler);
+        return () => window.removeEventListener('mousemove', moveHandler);
+      }, []);
+
+      const backgrounds = [
+        "/assets/gradient.png",
+        "/assets/waves.png",
+        "/assets/robot.1.png",
+      ];
+
+       // Preload images
+  useEffect(() => {
+    backgrounds.forEach((src) => {
+      const img = new window.Image();
+      img.src = src;
+    });
+  }, []);
+
+  // Cycle backgrounds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setBgIndex((prev) => (prev + 1) % backgrounds.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <section id="hero"  className={styles.container}>
+        <div className={styles.glowWrapper}>
+      {backgrounds.map((bg, i) => (
+        <div
+          key={i}
+          className={styles.bgLayer}
+          style={{
+            backgroundImage: `url(${bg})`,
+            opacity: i === bgIndex ? 1 : 0,
+          }}
+        />
+      ))}
+       <div className={styles.glowEffect} style={{left: coords.x,top: coords.y,}}/>
+       <div className={styles.heroContainer}>
+        <div className={styles.colorModeContainer}>
+            {/* <img src={heroImg} className={styles.hero} alt="Profile picture of DG" /> */}
+       <main className={styles.hero}>
+       <Spline 
+        className='hero-img'  scene="https://prod.spline.design/Eb-O5CxQcWMZ3xxg/scene.splinecode" loading="lazy"
+      />
+       </main>
+            <img src={themeIcon} className={styles.colorMode} alt="Color mode icon" onClick={toggleTheme}/>
+        </div>
+        <div className={styles.info}>
+            <h1><TypeAnimation sequence={['Duncan Githaiga',1000, 'DG']} cursor= {false}/></h1>
+            <h2>&lt;&gt; Software Engineer &lt;/&gt; </h2>
+            <br />
+            <span>
+            <a href="https://twitter.com/">
+             <img src={twitterIcon} alt="twitter" />
+            </a>
+            <a href="https://github.com/">
+             <img src={githubIcon} alt="github" />
+            </a>
+            <a href="https://linkedin.com/">
+             <img src={linkedinIcon} alt="linkedin" />
+            </a> 
+            <p><TypeAnimation
+              sequence={[
+                // Same substring at the start will only be typed out once, initially
+                'Create your world with a Developer',
+                1000, // wait 1s before replacing "Mice" with "Hamsters"
+                'Create your world with a Designer',
+                1000,
+                'Create your world with an Engineer',
+                1000,
+                'Create your world with DG',
+                1000
+              ]}
+              wrapper="span"
+              speed={40}
+              className={styles.description}
+              repeat={3}
+            /></p>
+            <a href={CV} download>
+                <button className="hover">Resume</button>
+            </a>
+            </span>
+        </div>
+     </div>
+     <motion.div
+      className={styles.arrowOval}
+      animate={{ y: [0, 8, 0] }}
+      transition={{ duration: 1.5, repeat: Infinity }}
+      onClick={() => document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' })}
+    >
+      <FaAnglesDown className={styles.downArrow} />
+    </motion.div>
+    </div>
+    </section>
+  )
+}
+export default Hero

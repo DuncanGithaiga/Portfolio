@@ -1,0 +1,114 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-content: center;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    
+    span { 
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    img {
+        width: 20px;
+    }
+    .section-title {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+      }
+      
+    .section-title.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+}
+
+.sectionDescription {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.column {
+    flex: 1;
+    justify-content: center;
+
+    .spline {
+        background-color: blue;
+    }
+    .skills {
+        display: flex;
+        flex-direction: column;
+        background-color: yellowgreen;
+    }
+    .logos {
+        display: flex;
+        float: bottom;
+        justify-content: center;
+        background-color: salmon;
+
+        img {
+            max-width: 250px;
+            align-self: center;
+            background-color: var(--project-card-bg);
+            border-radius: 20px;
+          }
+    }
+  }
+  .column img {
+    width: 120px; /* Increase size */
+    height: 120px; /* Optional: force square size */
+    object-fit: contain;
+    transition: transform 0.3s ease;
+  }
+  
+  .column img:hover {
+    transform: scale(1.1); /* Optional: subtle zoom on hover */
+  }
+.skilllist {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin: 0 auto;
+    padding: 20px;
+    width: 100%;
+    max-width: 800px;
+    background-color: var(--background-color);
+
+}
+
+hr {
+    width: 100px;
+    height: 2px;
+    background-color: var(--text-color);
+    border: none;
+    margin: 30px auto;
+}
+
+@media (width >= 800px) {
+    .skilllist {
+        max-width: fit-content;
+        gap: 30px;
+
+        p{
+            font-size: 20px;
+        }
+    }
+   
+    hr {
+        width: 300px;
+    }
+
+}
+    

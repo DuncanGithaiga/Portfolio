@@ -1,0 +1,9 @@
+.container {
+  align-items: center;
+  background-color: blue;
+  width: 100%;
+
+  .projectContainer{
+
+  }
+}

@@ -1,0 +1,151 @@
+.container {
+  display: flex;  
+    flex-direction: column;
+    text-align: center;
+    align-content: center;
+    text-align: center;  
+}
+
+textarea, input:not([type="submit"]) {
+    height: 50px;
+}
+
+textarea {
+    padding-top: 16px;
+    height: 250px;
+    resize: none;
+    
+}
+
+.line {
+    width: 250px;
+    height: 1px;
+    background-color: var(--line-color, #7f5af0);
+    margin: 20px auto;
+}
+
+.formContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.column {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.formGroup {
+    margin-bottom: 1.5rem;
+  }
+
+form {
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px);
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    color: var(--text-color);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+}
+
+  .iconGrid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1rem;
+  }
+  
+  .icon {
+    font-size: 2rem;
+    color: var(--accent-color, #7f5af0);
+    transition: transform 0.3s ease, color 0.3s ease;
+    animation: pulse 2s infinite ease-in-out;
+  }
+  
+  .icon:hover {
+    transform: scale(1.2);
+    color: #5e42c3;
+  }
+  
+
+input, textarea {
+    border-radius: 20px;
+    border: 1px solid #888;
+    background-color: var(--background-color);
+    box-sizing: border-box;
+    justify-content: center;
+    color: var(--form-text-color);
+}
+
+input, textarea::placeholder {
+    color: blue;
+    font-size: 16px;
+    font-weight: 300;
+    transition: box-shadow 200ms ease-in-out, transform 200ms ease-in-out;
+}
+
+::placeholder {
+    color: var(--form-text-color);
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+}
+
+input[type="submit"] {
+    background-color: var(--btn-color);
+    color: var(--text-color);
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 20px;
+    border: 1px solid #888;
+    padding: 10px 20px;
+    width: 100%;
+    transition: box-shadow 200ms ease-in-out, transform 200ms ease-in-out;
+    margin: auto;
+    font-size: 20px;
+}
+
+input[type="submit"]:hover {
+    background-color: var(--text-color);
+    color: var(--background-color);
+    transition: 0.3s;
+    transform: scale();
+}
+
+input[type="submit"]:active {
+    box-shadow: 0 0 5px var(--text-color), 0 0 25px var(--text-color), 0 0 50px var(--text-color);
+    transform: scale(0.95);
+}
+
+@media (width >= 800px) {
+    form {
+        flex-direction: row;
+        gap: 40px;
+    }
+
+    textarea, input:not([type="submit"]) {
+        width: 600px;
+        font-size: 20px;
+    }
+}
+
+ @media (width >= 1400px) {
+    textarea, input:not([type="submit"]) {
+        width: 500px;
+        font-size: 16px;
+    
+  }
+}

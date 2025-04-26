@@ -1,0 +1,10 @@
+.container {
+  align-items: center;
+  background-color: blue;
+  width: 100%;
+
+  .projectContainer{
+    display: flex;
+    flex-direction: column;
+  }
+}

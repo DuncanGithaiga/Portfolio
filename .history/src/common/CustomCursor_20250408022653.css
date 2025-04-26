@@ -1,0 +1,23 @@
+body {
+    cursor: none; /* Hide default cursor */
+  }
+  
+  .fancy-cursor {
+    position: fixed;
+    width: 30px;
+    height: 30px;
+    background-image: url('../assets/robot_hand.png'); /* path from public folder */
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 9999;
+    pointer-events: none;
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform 0.15s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+    z-index: 9999;
+  }
+  
+  .fancy-cursor.dragging {
+    transform: translate(-50%, -50%) scale(1.5);
+    background-color: #66ccff; /* brighter light blue */
+    box-shadow: 0 0 8px rgba(0, 174, 239, 0.5);
+  }

@@ -1,0 +1,198 @@
+.glowWrapper {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background-image: url('../../assets/gradient.png');
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  color: white;
+}
+@keyframes pulseGlow {
+  0%, 100% {
+    filter: blur(40px) brightness(1.2) saturate(1.4);
+  }
+  50% {
+    filter: blur(60px) brightness(1.6) saturate(2);
+  }
+}
+
+/* Gradient overlay fade at the bottom */
+/* .glowWrapper::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 20%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #E1E0E4 100%);  pointer-events: none;
+} */
+
+.glowEffect {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(103, 72, 153, 0.4) 0%, transparent 60%);
+  pointer-events: none;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: left 0.05s ease, top 0.05s ease;
+  mix-blend-mode: screen;
+  z-index: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  text-align: center;
+  height: 100dvh;
+  min-height: 500px;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+ 
+
+  .hero{
+    height: 500px;
+    justify-self: center;
+    align-self: center;
+    margin-top: 100px;
+    overflow: hidden;
+  }
+
+  span {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+  
+    a{
+        margin: 0;
+        
+        img {
+            width:30px
+        };
+    }
+}
+
+ a {
+    width: fit-content;
+    align-self: center;
+ }
+ 
+ button {
+    background-color: var(--btn-color);
+    color: var(--btn-text-color);
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 20px;
+    box-shadow: 0 0 5px var(--btn-text-color),
+    0 0 25px var(--btn-text-color),
+    0 0 50px var(--btn-text-color),
+    0 0 200px var(--btn-text-color);
+    transition: box-shadow 200ms ease-in-out, transform 200ms ease-in-out;
+    text-decoration: none;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: bold;
+    width: 126px;
+    height: 40px;
+    -webkit-box-reflect:below 1px linear-gradient(transparent, #0005);
+
+    &:hover {
+      background-color: var(--btn-text-color);
+      color: var(--btn-color);
+      transform: scale();
+      background: linear-gradient(90deg,transparent,#7f5af0);
+      animation: animate 1s linear infinite;
+
+        @keyframes animate{
+          0%{
+              left: -100%;
+          }
+          50%,100%{
+              left: 100%;
+          }
+        }
+    }
+
+    &:active {
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+      transform: translateY(2px);
+    }
+  }
+}
+
+.colorModeContainer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  gap: 20px;
+}
+
+.colorMode {
+  width: 25px;
+}
+
+.colorMode:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.description {
+    max-width: 24ch;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.scrollNavbar {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  gap: 2rem;
+  padding: 1rem;
+  background: transparent; /* or any background you want */
+  white-space: nowrap;
+}
+
+.scrollNavbar a {
+  flex: 0 0 auto;
+  scroll-snap-align: center;
+  text-decoration: none;
+  color: #fff; /* or #000 for light themes */
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+
+
+@media (width >= 800px) {
+  .container {
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  .hero {
+    max-width: 350px;
+    Width: 350px;
+  }
+
+  @media (width >= 1400px) {
+    .hero {
+      max-width: 400px;
+      Width: 400px;
+    }
+  }
+}

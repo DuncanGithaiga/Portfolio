@@ -1,0 +1,29 @@
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 4rem 1rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-carousel {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  height: 400px;
+  width: 100%;
+  user-select: none;
+  touch-action: none;
+}
+
+.card-carousel .card {
+  position: flex;
+  flex-direction: column;
+  transform: translateY(-50%);
+  transition: transform 0.3s ease, left 0.3s ease, opacity 0.3s ease, z-index 0.3s ease;
+
+}

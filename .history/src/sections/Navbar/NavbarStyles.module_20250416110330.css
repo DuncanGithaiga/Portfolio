@@ -1,0 +1,145 @@
+.navbar {
+    height: 100vh;
+    width: 200px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: transparent; /* 🔥 No background */
+    z-index: 1000;
+  }
+
+.scrollNavbar {
+    background: transparent;     /* ✅ Remove white background */
+    backdrop-filter: none;       /* Optional: remove blur if set */
+    box-shadow: none;            /* Remove any shadow */
+    border: none; 
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
+    height: 100vh;
+    width: 200px;
+    padding: 2rem 1rem;
+  gap: 2rem;
+    position: relative;
+  
+    /* Smooth scroll and transition */
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+    transition: scrollbar-color 0.5s ease;
+    margin-top: 500px;
+    margin-left: 50px;
+    }
+
+    .scrollNavbar:hover {
+        scrollbar-color: rgba(162, 89, 255, 0.7) transparent;
+      }
+      
+      .scrollNavbar::-webkit-scrollbar {
+        width: 6px;
+        opacity: 0;
+        transition: opacity 0.5s ease;
+      }
+      
+      .scrollNavbar:hover::-webkit-scrollbar {
+        opacity: 1;
+      }
+      
+      .scrollNavbar::-webkit-scrollbar-thumb {
+        background-color: rgba(162, 89, 255, 0.5);
+        border-radius: 4px;
+      }
+      
+  
+  .scrollNavbar a {
+    background: transparent;     /* ✅ No background on links */
+    color: var(--text-color);              /* Purple text */
+    text-decoration: none;
+    font-weight: 600;
+    scroll-snap-align: center;
+    /* transition: color 0.3s ease, transform 0.3s ease; */
+    opacity: 1;
+  filter: none;
+  transition: opacity 0.3s ease, filter 0.3s ease;
+  }
+  
+  .scrollNavbar a:hover {
+    color: #c084fc;
+    transform: scale(1.05);
+    background: transparent;     /* ensure hover has no bg */
+  }
+
+  /* When focused, dim others */
+.scrollNavbar.focused a {
+    opacity: 0.4;
+    filter: blur(1px);
+  }
+  
+  /* But highlight the active one */
+  .scrollNavbar.focused a.active {
+    opacity: 1;
+    filter: none;
+  }
+
+  .navLink {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    color: #a259ff;
+    text-decoration: none;
+    overflow: hidden;
+  }
+  
+  .activeLines {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    pointer-events: none;
+  }
+  
+  .lineTop,
+  .lineBottom {
+    position: absolute;
+    left: 10%;
+    right: 10%;
+    height: 2px;
+    background: #a259ff;
+    box-shadow: 0 0 10px #a259ff, 0 0 20px rgba(162, 89, 255, 0.5);
+    border-radius: 1px;
+  }
+  
+  .lineTop {
+    top: 0;
+  }
+  
+  .lineBottom {
+    bottom: 0;
+  }
+
+  .hamburger {
+    display: none;
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 2000;
+  }
+  
+  @media (max-width: 768px) {
+    .navbar {
+      transform: translateX(-100%);
+      transition: transform 0.3s ease;
+    }
+    .open {
+      transform: translateX(0);
+    }
+    .hamburger {
+      display: block;
+    }
+  }

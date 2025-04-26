@@ -1,0 +1,27 @@
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 4rem 1rem;
+  overflow: hidden;
+}
+
+.card-carousel {
+  position: relative;
+  height: 400px;
+  width: 100%;
+  user-select: none;
+  touch-action: none;
+}
+
+.card-carousel .card {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform 0.3s ease, left 0.3s ease, opacity 0.3s ease, z-index 0.3s ease;
+  width: 250px;
+  height: 350px;
+  opacity: 0;
+  pointer-events: none;
+}

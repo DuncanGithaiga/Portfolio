@@ -1,0 +1,244 @@
+.glowWrapper {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background-image: url('../../assets/gradient.png');
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  color: white;
+}
+@keyframes pulseGlow {
+  0%, 100% {
+    filter: blur(40px) brightness(1.2) saturate(1.4);
+  }
+  50% {
+    filter: blur(60px) brightness(1.6) saturate(2);
+  }
+}
+
+/* Gradient overlay fade at the bottom */
+/* .glowWrapper::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 20%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #E1E0E4 100%);  pointer-events: none;
+} */
+
+.glowEffect {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(103, 72, 153, 0.4) 0%, transparent 60%);
+  pointer-events: none;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: left 0.05s ease, top 0.05s ease;
+  mix-blend-mode: screen;
+  z-index: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  text-align: center;
+  height: 100dvh;
+  min-height: 500px;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+ 
+
+  .hero{
+    height: 500px;
+    justify-self: center;
+    align-self: center;
+    margin-top: 100px;
+    overflow: hidden;
+  }
+
+  span {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+  
+    a{
+        margin: 0;
+        
+        img {
+            width:30px
+        };
+    }
+}
+
+ a {
+    width: fit-content;
+    align-self: center;
+ }
+ 
+ button {
+    background-color: var(--btn-color);
+    color: var(--btn-text-color);
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 20px;
+    box-shadow: 0 0 5px var(--btn-text-color),
+    0 0 25px var(--btn-text-color),
+    0 0 50px var(--btn-text-color),
+    0 0 200px var(--btn-text-color);
+    transition: box-shadow 200ms ease-in-out, transform 200ms ease-in-out;
+    text-decoration: none;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: bold;
+    width: 126px;
+    height: 40px;
+    -webkit-box-reflect:below 1px linear-gradient(transparent, #0005);
+
+    &:hover {
+      background-color: var(--btn-text-color);
+      color: var(--btn-color);
+      transform: scale();
+      background: linear-gradient(90deg,transparent,#7f5af0);
+      animation: animate 1s linear infinite;
+
+        @keyframes animate{
+          0%{
+              left: -100%;
+          }
+          50%,100%{
+              left: 100%;
+          }
+        }
+    }
+
+    &:active {
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+      transform: translateY(2px);
+    }
+  }
+}
+
+.colorModeContainer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  gap: 20px;
+}
+
+.colorMode {
+  width: 25px;
+}
+
+.colorMode:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.description {
+    max-width: 24ch;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.scrollNavbar {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+  height: 60vh;
+  width: 200px;
+  background: rgba(255, 255, 255, 0.3) transparent;
+  position: relative;
+  margin-top: 50px;
+  /* Smooth scroll and transition */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+  transition: scrollbar-color 0.5s ease;
+  color: #000;
+
+}
+.scrollNavbar::-webkit-scrollbar {
+  width: 8px; /* width of the scrollbar */
+  display: none;
+}
+
+.scrollNavbar a {
+  scroll-snap-align: center;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  text-decoration: none;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 1;
+}
+
+.scrollNavbar a:not(:target) {
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+.scrollNavbar a:hover {
+  transform: scale(1.05);
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+}
+.scrollNavbar a:active {
+  transform: scale(0.95); 
+}
+
+/* WebKit (Chrome/Safari/Edge) scrollbar styling */
+.scrollNavbar::-webkit-scrollbar {
+  width: 6px;
+  transition: opacity 0.5s ease;
+}
+
+.scrollNavbar::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+}
+
+.scrollNavbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Fade out effect */
+.scrollNavbar::-webkit-scrollbar {
+  opacity: 0;
+}
+
+.scrollNavbar:hover::-webkit-scrollbar {
+  opacity: 1;
+}
+
+@media (width >= 800px) {
+  .container {
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  .hero {
+    max-width: 350px;
+    Width: 350px;
+  }
+
+  @media (width >= 1400px) {
+    .hero {
+      max-width: 400px;
+      Width: 400px;
+    }
+  }
+}

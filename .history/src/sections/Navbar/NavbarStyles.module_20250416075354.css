@@ -1,0 +1,45 @@
+.navbar {
+    height: 100vh;
+    width: 200px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: transparent; /* 🔥 No background */
+    z-index: 1000;
+  }
+
+.scrollNavbar {
+    background: transparent;     /* ✅ Remove white background */
+    backdrop-filter: none;       /* Optional: remove blur if set */
+    box-shadow: none;            /* Remove any shadow */
+    border: none; 
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
+    height: 100vh;
+    width: 70px;
+    padding: 1rem;
+    gap: 1rem;
+    position: relative;
+  
+    /* Smooth scroll and transition */
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+    transition: scrollbar-color 0.5s ease;
+    margin-top: 600px;
+    }
+  
+  .scrollNavbar a {
+    background: transparent;     /* ✅ No background on links */
+    color: #000;              /* Purple text */
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .scrollNavbar a:hover {
+    color: #c084fc;
+    transform: scale(1.05);
+    background: transparent;     /* ensure hover has no bg */
+  }

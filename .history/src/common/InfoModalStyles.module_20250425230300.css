@@ -1,0 +1,84 @@
+.infoModal {
+    position: absolute;
+    top: 68%; /* push it below the button */
+    left: 47%;
+    transform: translateX(-50%);
+    border-radius: 16px;
+    padding: 1.5rem;
+    z-index: 1000;
+    animation: slideUp 0.3s ease;
+    text-align: center;
+    align-items: center;
+  }
+  
+.openButton {
+    color: var(--btn-color, #7f5af0);
+    background-color: #e0e0e0;
+    border-radius: 50px;
+    box-shadow: inset 4px 4px 10px #bcbcbc, inset -4px -4px 10px #ffffff;
+    color: #4d4d4d;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 20px 40px;
+    transition: all 0.2s ease-in-out;
+    border: 2px solid rgb(206, 206, 206);
+    background-color: transparent;
+    width: 200px;
+    z-index: 1000;
+    text-align: center;
+    align-items: center;
+    top: 0px;
+  }
+
+ .openButton:focus {
+  outline: none;
+  box-shadow: inset 2px 2px 5px #bcbcbc, inset -2px -2px 5px #ffffff, 2px 2px 5px #bcbcbc, -2px -2px 5px #ffffff;
+}
+  
+  .openButton:hover {
+    box-shadow: inset 2px 2px 5px #bcbcbc, inset -2px -2px 5px #ffffff, 2px 2px 5px #bcbcbc, -2px -2px 5px #ffffff;
+  }
+  
+  .modalOverlay {
+    background: transparent;
+    backdrop-filter: none;
+    position: static; /* removes full-screen layout */
+    display: contents; /* lets children control layout */
+  }
+  
+  .modalContent {
+    border-radius: 16px;
+    padding: 2rem;
+    max-width: 400px;
+    width: 90%;
+    position: relative;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
+    animation: slideUp 0.3s ease;
+    left: 45%;
+    top: 100%;
+    transform: translateY(50%);
+  }
+  
+  .closeButton {
+    position: absolute;   
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #7f5af0;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: transparent;
+
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes slideUp {
+    from { transform: translateY(30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }

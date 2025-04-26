@@ -1,0 +1,49 @@
+/* ProjectStyles.module.css */
+
+.container {
+  /* position: relative; */
+  width: 100%;
+  /* overflow: hidden;
+  padding: 2rem 0; */
+  align-items: center;
+  justify-content: center;
+}
+
+.cardCarousel {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 400px;
+  align-items: center;
+  justify-content: center;
+  perspective: 1200px;
+  transition: all 0.3s ease-in-out;
+}
+
+.cardCarousel.smooth-return .card {
+  transition: all 0.4s ease;
+}
+
+.card {
+  position: absolute;
+  transition: all 0.3s ease;
+  cursor: grab;
+  transform-origin: center;
+  /* will-change: transform, left, z-index; */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.card.highlight {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05);
+}
+
+.cardController {
+  outline: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
