@@ -45,11 +45,6 @@ function Contact() {
   
       {/* Column 2: Form */}
       <div className={styles.column}>
-      <p>
-          I'm open to freelance opportunities, collaborations, or just a friendly hello.
-          Let's build something great together!
-        </p>
-        <p>Looking forward to connecting!</p>
         <form>
         <span className={`${styles.lCorner} ${styles.tl}`} />
         <span className={`${styles.lCorner} ${styles.tr}`} />
